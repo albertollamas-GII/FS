@@ -1,0 +1,12 @@
+Paradetectar el origen del error en el programa lo que haremos es usar:
+gdb convierte
+
+Gracias al gdb y sus herramientas como añadir puntos de ruptura, consultar el 
+valor de las variables, tipo..etc intentaremos encontrar el error
+
+Un error encontrado ha sido que no reconocía lo naturales del 1 al 10, lo hemos
+arreglado cambiando la función de las unidades. Quedaría así:
+
+int unidades (int numero) {
+return ((numero)%10);
+}

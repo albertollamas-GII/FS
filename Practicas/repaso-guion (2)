@@ -1,0 +1,34 @@
+#!/bin/bash
+#Titulo: 	repaso-guion
+#Fecha: 	20/04/2020
+#Autor: 	Alberto Llamas González
+#Versión: 	1.0
+#Descripción: 	Ejercicio Repaso:-En la carpeta personal, construya un guión llamado repaso-guion que admita tres argumentos, el primero será un directorio, el segundo una letra, y el tercero una palabra:examen-guion<nombre_directorio> <letra> <palabra> El guión debe:-Comprobar que se le están pasando tres argumentos, y si no fuera así, indicar cómo se debe ejecutar para que funcione correctamente. Esto es, dar una pequeña ayuda y terminar.-Crear, en caso de no existir, el directorio dado como primer argumento.-Comprobar que el segundo argumento sea una fo una d.  Si no fuera así, indicarlo con un mensaje de error y salir.-Encontrar la palabra dada en el tercerargumento de forma recursiva en los archivos existentes a partir del directorio indicado por el usuario (primer argumento), incluyendo el número de línea en donde se localiza el término. Almacenar el resultado de la consulta en un fichero llamado resultadodentro del directorio desde el que se ejecute el guión.-Buscar en el directorio indicado por el usuario (primerargumento) todos los ficheros o directorios según la letra pasada como segundoargumento (f=fichero, d=directorio) Almacenar el resultado de la consulta al final del fichero resultadodel apartado anterior
+
+if [ "$#" -ne 3 ]; then
+	echo "Introduzca tres parametros, el primero un directorio y el segundo una letra y el tercero una palabra";
+exit 1
+fi
+
+if ! [ -d $1 ]; then
+	echo "Creamos el directorio";
+	mkdir -p $1;
+fi
+
+if [ $2 == "d" ];then
+	echo "La letra introducida es una d";
+elif [ $2 == "f" ];then
+	echo "La letra introducida es una f";
+else
+	echo "ERROR letra erronea, tiene que ser d o f"; 
+exit 1
+fi
+
+(grep -r -n "$3" $1) > `pwd`/resultado.txt;
+
+if [ $2 == "d" ];then
+	find $1 -type d >> `pwd`/resultado.txt;
+elif [ $2 == "f" ];then
+	find $1 -type f >> `pwd`/resultado.txt;
+fi
+

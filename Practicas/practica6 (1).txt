@@ -1,0 +1,8 @@
+1. Ejecuto el ejercicio de la practica 5 de la siguiente manera:
+	(./ejercicio5) &
+
+2. El numero de proceso nos aparece, junto al numero entre corchetes, cuando mandamos al background la orden que queramos. Tambien podemos visualizar el numero de proceso de todo aquello que se ejecute en el background con jobs -l. En mi caso, despues de ejecutar ./ejercicio & y mandarlo al background me aparece el numero: 13679.
+
+3. kill %(identificador de proceso o numero de trabajo)
+
+4. top

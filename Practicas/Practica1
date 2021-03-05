@@ -1,0 +1,12 @@
+Practica1 - Alberto Llamas González
+
+1)
+mkdir mnt home home/luis home/pedro
+touch home/luis/Carta.txt
+
+2)
+rm luis/Carta.txt
+
+3)
+ls -la C*.*x
+

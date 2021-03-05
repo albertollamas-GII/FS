@@ -1,0 +1,45 @@
+#!/bin/bash
+#Titulo: 	Ejercicio5
+#Fecha: 	31/03/2020
+#Autor: 	Alberto Llamas González
+#Versión: 	1.0
+#Descripción: 	Ejercicio Práctica 5
+#Uso:		Menu Calculadora
+
+while :
+do
+	printf "\nSelecciona opcion:\n"
+	printf "\n1) Sumar numeros"
+	printf "\n2) Restar numeros"
+	printf "\n3) Multiplicar numeros"
+	printf "\n4) Salir\n"
+	
+	read -n1 -p "Elija la opcion deseada: " OPCION
+	case $OPCION in
+	
+		1) printf "\nIntroduzca dos numeros: "
+		   read n1 n2
+		   printf "\nHas elegido los numeros $n1 y $n2 \n"
+		   suma=$((n1 + n2))
+		   printf "Su suma es: " 
+		   echo $suma;;
+		
+		2) printf "\nIntroduzca dos numeros: "
+		   read n1 n2
+		   printf "\nHas elegido los numeros $n1 y $n2 \n"
+		   resta=$((n1 - n2))
+		   printf "Su resta es: " 
+		   echo $resta;;
+
+		3) printf "\nIntroduzca dos numeros: "
+		   read n1 n2
+		   printf "\nHas elegido los numeros $n1 y $n2 \n"
+		   producto=$((n1 * n2))
+		   printf "Su producto es: "
+		   echo $producto;;
+
+		4) break;;
+	
+	esac
+	sleep 2
+done

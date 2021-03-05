@@ -1,0 +1,24 @@
+#!/bin/bash
+#Titulo: 	Ejercicio4
+#Fecha: 	26/03/2020
+#Autor: 	Alberto Llamas González
+#Versión: 	1.0
+#Descripción: 	Ejercicio Práctica 4(2)
+#Uso:		Haciendo uso de las órdenes conocidas hasta el momento, construye un guión que admita dos parámetros, que compare por separado si el primer parámetro que se le pasa es igual al segundo, o es menor, o es mayor, y que informe tanto del valor de cada uno de los parámetros como del resultado de cada una de las evaluaciones mostrando un 0 o un 1, según corresponda.
+#Observaciones:	Se ha utilizado el criterio 1=true, 0= false.
+
+
+a=$1
+b=$2
+
+echo "El valor de a es: "$a
+
+echo "El valor de b es: "$b
+
+echo "a y b son iguales: "$[$a==$b]
+
+echo "a es menor que b: "$[$a<$b]
+
+echo "a es mayor que b: "$[$a>$b]
+
+

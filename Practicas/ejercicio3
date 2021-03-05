@@ -1,0 +1,10 @@
+#!/bin/bash
+#Titulo: 	Ejercicio3
+#Fecha: 	3/03/2020
+#Autor: 	Alberto Llamas González
+#Versión: 	1.0
+#Descripción: 	Ejercicio Práctica 3
+#Uso:	Crea un guión que muestre los archivos de un directorio (que se pasará como primer argumento) que han sido accedidos en los últimos x días (este número de días se pasará como segundo argumento al guión)
+
+printf "Los archivos del directorio $1 que han sido accedidos en los últimos $2 días son: \n"
+find $1 -atime -$2

@@ -1,0 +1,33 @@
+#!/bin/bash
+#Titulo: 	Ejercicio4
+#Fecha: 	10/03/2020
+#Autor: 	Alberto Llamas González
+#Versión: 	1.0
+#Descripción: 	Ejercicio Práctica 4
+#Uso:	Crea un guión que tenga dos argumentos de tipo numérico. Si alguno de los argumentos no es un número finaliza y muestra un mensaje al usuario del error "el argumento .... no es un numero". A continuación, compara ambos argumentos. Si son iguales, crea una variable con los nombres de los archivos del directorio actual del usuario y si son distintos crea una variable con los nombres de los archivos del directorio home del usuario. Finalmente imprime en pantalla el contenido de dicha variable y el nombre de ruta del directorio (actual o home, según sea el caso).
+
+let primera=$1
+
+if [[ $? == 1 ]];
+then
+	echo "$1 no es un numero"
+	exit 1
+fi
+
+let segunda=$2
+if [[ $? == 1 ]];
+then
+	echo "$2 no es un numero"
+	exit 1
+fi
+
+if [[ "$primero" == "$segundo" ]];
+then
+	archivos=`ls .`
+	echo $PWD
+else
+	archivos=`ls $HOME`
+	printf "$HOME \n"
+fi
+
+printf "$archivos\n"

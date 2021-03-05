@@ -1,0 +1,47 @@
+1.mkdir repaso -p repaso/prueba1/ejercicio1 repaso/prueba2
+2.touch arch1.txt arch2.txt arch3.txt arch4.pdf arch5.pdf
+3.let —help|grep “expresiones”>arch1.txt
+4.cp repaso/prueba1/ejercicio1/*.*x* repaso/prueba2
+5.man find|head -15 >> repaso/prueba2/arch1.txt
+6.let w=“2+3+4+5/2” && echo $w (sin decimales)
+echo 2+3+4+5/2|bc -l (con decimales)
+
+7. touch EjercicioRepaso
+
+#!/bin/bash
+#Titulo: 	EjercicioRepaso
+#Fecha: 	21/03/2020
+#Autor: 	Alberto Llamas González
+#Versión: 	1.0
+#Descripción: 	Ejercicio Repaso
+
+if [ "$#" -ne 2 ]; then
+	echo "Introduzca dos parametros, el primero un directorio y el segundo un archivo";
+exit 1
+fi
+
+if [[ -f $2 ]]; then
+	head -3 $2 > salida
+	echo "salida tiene ahora las tres primeras lineas del archivo ";
+else
+	echo "ERROR! $2 no es un archivo";
+	exit 1
+fi
+
+if [[ -d $1 ]]; then
+	archivos=`ls $1 | wc -w`;
+	echo "$1 contiene $archivos archivos";
+else
+	mkdir $1
+fi
+~
+
+archivos=`find $1 -perm -u+r`;
+
+find $1 -perm -u+r >> salida;
+
+archivosLectura=`find $1 -perm -u+r | wc -l`;
+
+totalArchivos=`ls -LR $1 | wc -l`;
+
+echo "Hay $archivosLectura archivos de lectura de $totalArchivos archivos"

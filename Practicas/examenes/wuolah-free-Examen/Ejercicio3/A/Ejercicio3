@@ -1,0 +1,13 @@
+Para generar el programa ejecutable, haremos:
+
+g++ -c romanos.c
+
+De esta forma se crea el código objeto.
+Por tanto, ahora usaremos:
+
+g++ -g -Wall romanos.o -o convierte
+
+De esta forma el programa se llamará "convierte" y tendrá
+opciones de depuración.
+
+
